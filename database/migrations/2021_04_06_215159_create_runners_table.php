@@ -14,7 +14,7 @@ class CreateRunnersTable extends Migration
     public function up()
     {
         Schema::create('runners', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
 
             $table->string('name');
             $table->char('document', 11);
