@@ -2,27 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RunnerCompetitionRequest;
-use App\Models\RunnerCompetition;
-use App\Services\RunnerCompetitionService;
+use App\Http\Requests\CompetitionResultRequest;
+use App\Models\CompetitionResult;
+use App\Services\CompetitionResultService;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Exception;
 
-class RunnerCompetitionController extends BaseController
+class CompetitionResultController extends BaseController
 {
-    public function __construct(RunnerCompetitionService $service = null)
+    public function __construct(CompetitionResultService $service = null)
     {
         parent::__construct($service);
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function index(Request $request)
+    {
+        $paginate = $request->query('per_page', 10);
+
+        $results = $this
+            ->createQuery($request)
+            ->list($paginate, ['runner','competition']);
+
+        return response($results);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
-     * @param RunnerCompetitionRequest $request
+     * @param CompetitionResultRequest $request
      * @return Response
      * @throws \Exception
      */
-    public function store(RunnerCompetitionRequest $request)
+    public function store(CompetitionResultRequest $request)
     {
         try {
             $response = $this
@@ -37,10 +55,10 @@ class RunnerCompetitionController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param  RunnerCompetition  $runner
+     * @param  CompetitionResult  $runner
      * @return Response
      */
-    public function show(RunnerCompetition $runner)
+    public function show(CompetitionResult $runner)
     {
         return response($runner->find($runner->id));
     }
@@ -48,12 +66,12 @@ class RunnerCompetitionController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param RunnerCompetitionRequest $request
-     * @param RunnerCompetition $runner
+     * @param CompetitionResultRequest $request
+     * @param CompetitionResult $runner
      * @return Response
      * @throws Exception
      */
-    public function update(RunnerCompetitionRequest $request, RunnerCompetition $runner)
+    public function update(CompetitionResultRequest $request, CompetitionResult $runner)
     {
         try {
             $response = $this
@@ -68,11 +86,11 @@ class RunnerCompetitionController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param RunnerCompetition $runner
+     * @param CompetitionResult $runner
      * @return Response
      * @throws Exception
      */
-    public function destroy(RunnerCompetition $runner)
+    public function destroy(CompetitionResult $runner)
     {
         $this
             ->service

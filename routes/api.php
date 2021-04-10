@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('/runners', 'RunnerController');
 Route::apiResource('/competitions', 'CompetitionController');
 Route::apiResource('/runner-competitions', 'RunnerCompetitionController');
+Route::apiResource('/competition-results', 'CompetitionResultController');
