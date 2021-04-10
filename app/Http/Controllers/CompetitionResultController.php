@@ -98,4 +98,34 @@ class CompetitionResultController extends BaseController
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function competitionClassificationByAge(Request $request): Response
+    {
+        $results = $this
+            ->service
+            ->competitionClassificationByAge($request);
+
+        return response($results);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function competitionClassification(Request $request): Response
+    {
+        $results = $this
+            ->service
+            ->competitionClassification($request);
+
+        return response($results);
+    }
 }

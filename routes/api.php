@@ -18,3 +18,5 @@ Route::apiResource('/runners', 'RunnerController');
 Route::apiResource('/competitions', 'CompetitionController');
 Route::apiResource('/runner-competitions', 'RunnerCompetitionController');
 Route::apiResource('/competition-results', 'CompetitionResultController');
+Route::get('/classification', 'CompetitionResultController@competitionClassification');
+Route::get('/classification-by-age', 'CompetitionResultController@competitionClassificationByAge');
