@@ -1,31 +1,27 @@
 version: '3'
 
 services:
-  mysql:
-    image: mysql:5.7
+  postgres:
+    image: postgres:10.5
     restart: always
     volumes:
-      - db_data:/var/lib/mysql
+      - './storage/app/postgres/data:/var/lib/postgresql/data'
     environment:
-      MYSQL_DATABASE: 'race-api'
-      # So you don't have to use root, but you can if you like
-      MYSQL_USER: 'root'
-      # You can use whatever password you like
-      MYSQL_PASSWORD: 'password'
-      # Password for root access
-      MYSQL_ROOT_PASSWORD: 'password'
+      - POSTGRES_DB=race-api
+      - POSTGRES_USER=race-api
+      - POSTGRES_PASSWORD=race-api
     ports:
-      - '3307:3306'
+      - '5432:5432'
 
   devapp:
     restart: unless-stopped
     depends_on:
-      - mysql
+      - postgres
     image: ambientum/php:7.3-nginx
     environment:
       - XDEBUG_ENABLED=${XDEBUG_ENABLED}
     links:
-      - mysql
+      - postgres
     volumes:
       - './:/var/www/app'
       - '${HOME}/.composer/:/home/ambientum/.composer/'
