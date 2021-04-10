@@ -1,85 +1,82 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Runner;
-use Illuminate\Http\Request;
+use App\Http\Requests\RunnerRequest;
+use App\Services\RunnerService;
+use Illuminate\Http\Response;
+use Exception;
 
-class RunnerController extends Controller
+class RunnerController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct(RunnerService $service = null)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        parent::__construct($service);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param RunnerRequest $request
+     * @return Response
+     * @throws \Exception
      */
-    public function store(Request $request)
+    public function store(RunnerRequest $request)
     {
-        //
+        try {
+            $response = $this
+                ->service
+                ->create($request->toArray());
+            return response($response, Response::HTTP_CREATED);
+        } catch (Exception $e) {
+            return response($e->getMessage(), $e->getCode());
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Runner  $runner
-     * @return \Illuminate\Http\Response
+     * @param  Runner  $runner
+     * @return Response
      */
     public function show(Runner $runner)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Runner  $runner
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Runner $runner)
-    {
-        //
+        return response($runner->find($runner->id));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Runner  $runner
-     * @return \Illuminate\Http\Response
+     * @param RunnerRequest $request
+     * @param Runner $runner
+     * @return Response
+     * @throws Exception
      */
-    public function update(Request $request, Runner $runner)
+    public function update(RunnerRequest $request, Runner $runner)
     {
-        //
+        try {
+            $response = $this
+                ->service
+                ->update($request, $runner);
+            return response($response, Response::HTTP_CREATED);
+        } catch (Exception $e) {
+            return response($e->getMessage(), $e->getCode());
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Runner  $runner
-     * @return \Illuminate\Http\Response
+     * @param Runner $runner
+     * @return Response
+     * @throws Exception
      */
     public function destroy(Runner $runner)
     {
-        //
+        $this
+            ->service
+            ->delete($runner);
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

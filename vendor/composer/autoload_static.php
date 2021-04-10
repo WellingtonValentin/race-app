@@ -47,6 +47,10 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'g' => 
+        array (
+            'geekcom\\ValidatorDocs\\' => 22,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -59,6 +63,7 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'Thiagocfn\\InscricaoEstadual\\' => 28,
             'Tests\\' => 6,
         ),
         'S' => 
@@ -190,6 +195,10 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'geekcom\\ValidatorDocs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs',
+        ),
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
@@ -205,6 +214,10 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'Thiagocfn\\InscricaoEstadual\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src',
         ),
         'Tests\\' => 
         array (
@@ -509,8 +522,12 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Enums\\Enum' => __DIR__ . '/../..' . '/app/Enums/Enum.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Filters\\Filters' => __DIR__ . '/../..' . '/app/Filters/Filters.php',
+        'App\\Http\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/BaseController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\RunnerController' => __DIR__ . '/../..' . '/app/Http/Controllers/RunnerController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -520,13 +537,18 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\RunnerRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RunnerRequest.php',
+        'App\\Models\\MainModel' => __DIR__ . '/../..' . '/app/Models/MainModel.php',
         'App\\Models\\Runner' => __DIR__ . '/../..' . '/app/Models/Runner.php',
-        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Services\\CRUDService' => __DIR__ . '/../..' . '/app/Services/CRUDService.php',
+        'App\\Services\\RunnerService' => __DIR__ . '/../..' . '/app/Services/RunnerService.php',
+        'App\\Utils\\ResponsePattern' => __DIR__ . '/../..' . '/app/Utils/ResponsePattern.php',
+        'App\\Utils\\StringFormat' => __DIR__ . '/../..' . '/app/Utils/StringFormat.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -630,8 +652,8 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\RunnerFactory' => __DIR__ . '/../..' . '/database/factories/RunnerFactory.php',
-        'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\RunnerSeeder' => __DIR__ . '/../..' . '/database/seeders/RunnerSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -5074,6 +5096,36 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Estados' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Estados.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\ValidadorInteface' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/ValidadorInteface.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Acre' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Acre.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Alagoas' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Alagoas.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Amapa' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Amapa.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Amazonas' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Amazonas.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Bahia' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Bahia.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Ceara' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Ceara.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\DistritoFederal' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/DistritoFederal.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\EspiritoSanto' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/EspiritoSanto.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Goias' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Goias.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Maranhao' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Maranhao.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\MatoGrosso' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/MatoGrosso.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\MatoGrossoDoSul' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/MatoGrossoDoSul.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\MinasGerais' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/MinasGerais.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Para' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Para.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Paraiba' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Paraiba.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Parana' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Parana.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Pernambuco' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Pernambuco.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Piaui' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Piaui.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\RioDeJaneiro' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/RioDeJaneiro.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\RioGrandeDoNorte' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/RioGrandeDoNorte.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\RioGrandeDoSul' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/RioGrandeDoSul.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Rondonia' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Rondonia.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Roraima' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Roraima.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\SantaCatarina' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/SantaCatarina.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\SaoPaulo' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/SaoPaulo.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Sergipe' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Sergipe.php',
+        'Thiagocfn\\InscricaoEstadual\\Util\\Validador\\Tocantins' => __DIR__ . '/..' . '/thiagocfn/inscricaoestadual/src/Util/Validador/Tocantins.php',
         'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',
@@ -5104,6 +5156,19 @@ class ComposerStaticInit928026eedb5c405a663c89ff577e9667
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'geekcom\\ValidatorDocs\\Rules\\Certidao' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Certidao.php',
+        'geekcom\\ValidatorDocs\\Rules\\Cnh' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Cnh.php',
+        'geekcom\\ValidatorDocs\\Rules\\Cnpj' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Cnpj.php',
+        'geekcom\\ValidatorDocs\\Rules\\Cns' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Cns.php',
+        'geekcom\\ValidatorDocs\\Rules\\Cpf' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Cpf.php',
+        'geekcom\\ValidatorDocs\\Rules\\InscricaoEstadual' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/InscricaoEstadual.php',
+        'geekcom\\ValidatorDocs\\Rules\\Nis' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Nis.php',
+        'geekcom\\ValidatorDocs\\Rules\\Placa' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Placa.php',
+        'geekcom\\ValidatorDocs\\Rules\\Renavam' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Renavam.php',
+        'geekcom\\ValidatorDocs\\Rules\\Sanitization' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/Sanitization.php',
+        'geekcom\\ValidatorDocs\\Rules\\TituloEleitoral' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Rules/TituloEleitoral.php',
+        'geekcom\\ValidatorDocs\\Validator' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/Validator.php',
+        'geekcom\\ValidatorDocs\\ValidatorProvider' => __DIR__ . '/..' . '/geekcom/validator-docs/src/validator-docs/ValidatorProvider.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

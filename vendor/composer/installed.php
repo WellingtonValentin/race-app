@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ac6b48f83eb7605c8285bb814cf795bb5f8b675f',
+    'reference' => '1ef5439db60fa9d89a5e065b9fdcfa950af2ef1c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -159,6 +159,15 @@
       array (
       ),
       'reference' => '01de0fe5f71c70d1930ee9a80385f9cc28e0f63a',
+    ),
+    'geekcom/validator-docs' => 
+    array (
+      'pretty_version' => '3.5.1',
+      'version' => '3.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd5a0e7be832003332395b5e3eac2a58f879ca060',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -445,7 +454,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ac6b48f83eb7605c8285bb814cf795bb5f8b675f',
+      'reference' => '1ef5439db60fa9d89a5e065b9fdcfa950af2ef1c',
     ),
     'laravel/sail' => 
     array (
@@ -1234,6 +1243,15 @@
       array (
       ),
       'reference' => '75a63c33a8577608444246075ea0af0d052e452a',
+    ),
+    'thiagocfn/inscricaoestadual' => 
+    array (
+      'pretty_version' => '1.1.2',
+      'version' => '1.1.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '414a43f152b9ff39b9cabd33c9bdf34a2018df1b',
     ),
     'tijsverkoyen/css-to-inline-styles' => 
     array (

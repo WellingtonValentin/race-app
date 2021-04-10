@@ -17,8 +17,8 @@ class CreateRunnersTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->char('document', 11);
-            $table->date('birth_date');
+            $table->string('document');
+            $table->string('birth_date');
 
             $table->timestamps();
             $table->softDeletes();
