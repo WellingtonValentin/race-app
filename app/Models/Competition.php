@@ -26,4 +26,9 @@ class Competition extends MainModel
     protected $casts = [
         'date' => 'date:d/m/Y',
     ];
+
+    public function runners()
+    {
+        return $this->belongsToMany(Runner::class, 'runner_competitions');
+    }
 }

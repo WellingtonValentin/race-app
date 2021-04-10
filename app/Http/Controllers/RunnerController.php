@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Runner;
 use App\Http\Requests\RunnerRequest;
 use App\Services\RunnerService;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Exception;
 
@@ -12,6 +13,23 @@ class RunnerController extends BaseController
     public function __construct(RunnerService $service = null)
     {
         parent::__construct($service);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function index(Request $request)
+    {
+        $paginate = $request->query('per_page', 10);
+
+        $results = $this
+            ->createQuery($request)
+            ->list($paginate, ['competitions']);
+
+        return response($results);
     }
 
     /**
