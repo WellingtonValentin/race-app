@@ -60,7 +60,7 @@ abstract class CRUDService
      * @return void
      * @throws Exception
      */
-    public function fill(Model & $model, array $data)
+    public function fill(Model &$model, array $data)
     {
         throw new Exception('Método não foi implementado');
     }
@@ -131,7 +131,7 @@ abstract class CRUDService
      */
     public function filter(string $searchTerm, Request $request)
     {
-        $filterLocation = str_replace('\Domains','\Domains\Filters', $this->modelClass);
+        $filterLocation = str_replace('\Domains', '\Domains\Filters', $this->modelClass);
         $filterClass = $filterLocation . "Filter";
 
         if (class_exists($filterClass)) {

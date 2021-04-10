@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '1ef5439db60fa9d89a5e065b9fdcfa950af2ef1c',
+    'reference' => 'e36fa4cb980703d56a63e2f324bffe23a54c972e',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -454,7 +454,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '1ef5439db60fa9d89a5e065b9fdcfa950af2ef1c',
+      'reference' => 'e36fa4cb980703d56a63e2f324bffe23a54c972e',
     ),
     'laravel/sail' => 
     array (
@@ -968,6 +968,15 @@
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'squizlabs/php_codesniffer' => 
+    array (
+      'pretty_version' => '3.6.0',
+      'version' => '3.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ffced0d2c8fa8e6cdc4d695a743271fab6c38625',
     ),
     'swiftmailer/swiftmailer' => 
     array (

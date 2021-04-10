@@ -40,7 +40,7 @@ class RunnerCompetitionService extends CRUDService
      *
      * @return void
      */
-    public function fill(& $model, $data)
+    public function fill(&$model, $data)
     {
         $model->runner_id = isset($data['runner']) ? $data['runner']['id'] : (
             $data['runner_id'] ? $data['runner_id'] : null

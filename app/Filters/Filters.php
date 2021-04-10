@@ -73,7 +73,10 @@ abstract class Filters
     {
         $valueNotAccents = StringFormat::removeAccents($value);
         $this->valueSearch = '%' . strtoupper($valueNotAccents) . '%';
-        $this->columnRaw = DB::raw("UPPER(REPLACE($column, 'ŠšŽžÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿþƒ', 'SsZzAAAAAAACEEEEIIIINOOOOOOUUUUYYBaaaaaaaceeeeiiiinoooooouuuuyybf'))");
+        $this->columnRaw = DB::raw(
+            "UPPER(REPLACE($column, 'ŠšŽžÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸÞàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿþƒ', 
+            'SsZzAAAAAAACEEEEIIIINOOOOOOUUUUYYBaaaaaaaceeeeiiiinoooooouuuuyybf'))"
+        );
     }
 
     private function filterDataField($value, $column)

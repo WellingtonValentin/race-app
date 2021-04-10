@@ -66,19 +66,24 @@ class StringFormat
         return strtr($string, $replace);
     }
 
-    public static function clearCNPJ($cnpj){
-        return str_replace(['/','.','-'],'',$cnpj);
+    public static function clearCNPJ($cnpj)
+    {
+        return str_replace(['/','.','-'], '', $cnpj);
     }
 
     public static function mask($val, $mask): string
     {
         $maskared = '';
         $k = 0;
-        for($i = 0; $i<=strlen($mask)-1; $i++) {
-            if($mask[$i] == '#') {
-                if(isset($val[$k])) $maskared .= $val[$k++];
+        for ($i = 0; $i<=strlen($mask)-1; $i++) {
+            if ($mask[$i] == '#') {
+                if (isset($val[$k])) {
+                    $maskared .= $val[$k++];
+                }
             } else {
-                if(isset($mask[$i])) $maskared .= $mask[$i];
+                if (isset($mask[$i])) {
+                    $maskared .= $mask[$i];
+                }
             }
         }
         return $maskared;

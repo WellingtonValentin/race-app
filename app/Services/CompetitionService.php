@@ -41,7 +41,7 @@ class CompetitionService extends CRUDService
      *
      * @return void
      */
-    public function fill(& $model, $data)
+    public function fill(&$model, $data)
     {
         $model->type = $data['type'];
         $model->date = $this->formatBirthDate($data['date']);

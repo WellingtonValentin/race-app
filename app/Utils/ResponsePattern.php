@@ -26,8 +26,9 @@ class ResponsePattern
      */
     private static function getErrorFormat($errorMessage): array
     {
-        if (is_string($errorMessage))
+        if (is_string($errorMessage)) {
             return ['error' => $errorMessage];
+        }
 
         return [
             'error' => [

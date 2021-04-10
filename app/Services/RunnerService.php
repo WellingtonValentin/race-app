@@ -41,7 +41,7 @@ class RunnerService extends CRUDService
      *
      * @return void
      */
-    public function fill(& $model, $data)
+    public function fill(&$model, $data)
     {
         $model->name = $data['name'];
         $model->document = $data['document'];
