@@ -2,9 +2,11 @@
 namespace App\Services;
 
 use App\Models\CompetitionResult;
+use App\Models\RunnerCompetition;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CompetitionResultService extends CRUDService
 {
@@ -27,6 +29,14 @@ class CompetitionResultService extends CRUDService
     {
         $model = new CompetitionResult();
         $this->fill($model, $data);
+
+        if (!$this->findCompetition($model)) {
+            throw new \RuntimeException(
+                'Este competidor não está cadastrado nesta competição',
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
         $model->save();
 
         return $model;
@@ -40,6 +50,14 @@ class CompetitionResultService extends CRUDService
     public function update($data, $model): CompetitionResult
     {
         $this->fill($model, $data->toArray());
+
+        if (!$this->findCompetition($model)) {
+            throw new \RuntimeException(
+                'Este competidor não está cadastrado nesta competição',
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+
         $model->save();
 
         return $model;
@@ -142,5 +160,13 @@ class CompetitionResultService extends CRUDService
         }
 
         return $result->orderBy('runner_end_time')->get();
+    }
+
+    private function findCompetition($model)
+    {
+        return RunnerCompetition
+            ::whereRunnerId($model->runner_id)
+            ->where('competition_id', $model->competition_id)
+            ->first();
     }
 }
