@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\CompetitionEnum;
 use App\Models\Competition;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,8 @@ class CompetitionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'type' => array_rand(CompetitionEnum::getAllValues()),
+            'date' => $this->faker->date(),
         ];
     }
 }

@@ -22,7 +22,9 @@ class RunnerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'document' => $this->faker->text(11),
+            'birth_date' => $this->faker->date(),
         ];
     }
 }

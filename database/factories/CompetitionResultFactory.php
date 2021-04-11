@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Competition;
 use App\Models\CompetitionResult;
+use App\Models\Runner;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompetitionResultFactory extends Factory
@@ -21,8 +24,13 @@ class CompetitionResultFactory extends Factory
      */
     public function definition()
     {
+        $start = $this->faker->time('H:i:s');
+        $end = Carbon::parse($start)->addHour()->format('H:i:s');
         return [
-            //
+            'runner_id' => Runner::factory()->create()->id,
+            'competition_id' => Competition::factory()->create()->id,
+            'runner_start_time' => $start,
+            'runner_end_time' => $end,
         ];
     }
 }
