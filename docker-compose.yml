@@ -1,31 +1,51 @@
 version: '3'
-
 services:
-  postgres:
-    image: postgres:10.5
-    restart: always
-    volumes:
-      - './storage/app/postgres/data:/var/lib/postgresql/data'
-    environment:
-      - POSTGRES_DB=race-api
-      - POSTGRES_USER=race-api
-      - POSTGRES_PASSWORD=race-api
-    ports:
-      - '5432:5432'
 
-  devapp:
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: digitalocean.com/php
+    container_name: app
     restart: unless-stopped
-    depends_on:
-      - postgres
-    image: ambientum/php:7.3-nginx
+    tty: true
     environment:
-      - XDEBUG_ENABLED=${XDEBUG_ENABLED}
-    links:
-      - postgres
-    volumes:
-      - './:/var/www/app'
-      - '${HOME}/.composer/:/home/ambientum/.composer/'
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    networks:
+      - app-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
     ports:
-      - '8081:8080'
-volumes:
-  db_data: {}
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+
+  #MySQL Service
+  db:
+    image: mysql:5.7.22
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: password
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
